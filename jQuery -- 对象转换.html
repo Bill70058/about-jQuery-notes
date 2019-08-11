@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOM对象与jQuery对象转换</title>
+		<script src="jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+<!-- 		<div class="mui-input-row mui-checkbox ">
+			<label>Checkbox</label>
+			<input name="Checkbox" type="checkbox" id="cr">
+		</div> -->
+		<input type="checkbox" name="cr" id="cr" value="" /><label for='cr'>我已经阅读上面的制度</label>
+		<script type="text/javascript">
+/* 			var $cr = $('#cr');
+			var cr = $cr[0];
+			var cr2 = $cr.get(0);
+			
+			console.log(cr.checked);
+			console.log(cr2.checked); */
+			$(document).ready(function(){
+				var $cr = $('#cr');
+				var cr = $cr[0];
+				$cr.click(function(){
+					
+					//DOM 方式判断
+/* 					if(cr.checked){
+						alert('感谢你的支持！你可以继续操作了');
+					} */
+					//jQuery 方式判断,is.(':checked')是jQuery方法,判断目标是否被选中,返回Boolean值
+					if($cr.is(':checked')){
+						alert('感谢你的支持！你可以继续操作了');
+					}
+				})
+			})
+		</script>
+	</body>
+</html>
